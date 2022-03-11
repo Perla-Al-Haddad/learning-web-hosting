@@ -1,4 +1,173 @@
-<h1>Hello world</h1>
-<p>DUDE LOOK</p>
-<p>It's hosted!!</p>
-<small>I hope none of my colleagues see this</small>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Static Page</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/fontawesome-free-6.0.0-web/css/all.css">
+  <style>
+    body {
+      font-family: serif;
+    }
+
+    .purple-background            { background-color: #dcd4f5; }
+    .dark-purple-background       { background-color: #1a1624; }
+    .secondary-purple-background  { background-color: #AEA8BA; }
+    .pink-purple-background       { background-color: #E582CC; } 
+    .pink-background              { background-color: #FF8AAB; } 
+    .orange-secondary-background  { background-color: #FFA685; } 
+    .orange-background            { background-color: #FFCE6A; }
+  
+    nav a, .nav li a {
+      font-size: 1.2rem;
+      color: white;
+      transition: color 0.2s;  
+      font-weight: 300;
+    }
+    .nav li a:hover {
+      color: rgba(255, 255, 255, 0.467);
+    }
+
+    .nav-icon {
+      padding-right: 15px;
+      padding-left: 5px;
+    }
+
+    header {
+      height: 65vh;
+      width: 100%;
+      background-size: cover;
+      background-image: url('assets/images/home-page-header.jpg');
+    }
+    header > div {
+      width: inherit; 
+      height: inherit; 
+      display: flex; 
+      align-items: flex-end;
+      background: #1a162499;
+      background: linear-gradient(0deg, #1a1624bd 30%, rgba(26, 22, 36, 0.227) 100%);
+    }
+    header > div h1 {
+      text-shadow: black 0 0 5px;
+    }
+  </style>
+
+</head>
+<body>
+  
+  <main>
+    <header>
+      <div>
+        <div class="container">
+          <h1 class="text-white display-1 pb-3">Page Title</h1>
+        </div>
+      </div>
+    </header>
+    <nav class="navbar navbar-expand-md navbar-dark py-3 dark-purple-background" aria-label="Fourth navbar example">
+      <div class="container">
+        <a href="/" class=" d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none ">
+          <i class="fa-solid fa-mitten nav-icon"></i>
+        </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class=" collapse navbar-collapse" id="navbarsExample04">
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ml-3">
+            <li><a href="#" class="nav-link px-3 py-0 ">Home</a></li>
+            <li><a href="#" class="nav-link px-3 py-0 ">Features</a></li>
+            <li><a href="#" class="nav-link px-3 py-0 ">Pricing</a></li>
+            <li><a href="#" class="nav-link px-3 py-0 ">FAQs</a></li>
+            <li><a href="#" class="nav-link px-3 py-0 ">About</a></li>
+          </ul>
+          <div class="text-end">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ml-3">
+              <li><a href="#" class="nav-link px-3 py-0 ">Login</a></li>
+              <li><a href="#" class="nav-link px-3 py-0 ">Sign up</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+      <div class="p-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <h1 class="display-1">Lorem Ipsum</h1>
+              <p class="lead">
+                Elit culpa Lorem est pariatur consectetur fugiat ex cillum sunt. Reprehenderit commodo quis sunt deserunt exercitation ullamco anim quis nulla laboris tempor incididunt deserunt. Duis exercitation voluptate in minim quis adipisicing adipisicing ut occaecat dolor aute veniam duis labore. Labore ea cupidatat et pariatur consequat exercitation ad Lorem nisi fugiat est. Ullamco occaecat cillum irure irure eiusmod occaecat.</p>
+            </div>
+            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+              <img class="rounded shadow" src="assets/images/home-page-img-1.jpg" style="width: 80%;" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="purple-background p-4">
+        <div class="container">
+          <div class="row ">
+            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+              <img class="rounded shadow" src="assets/images/home-page-img-2.jpg" style="width: 80%;" alt="">
+            </div>
+            <div class="col-12 col-md-6">
+              <h1 class="display-1">Lorem Ipsum</h1>
+              <p class="lead">
+                Elit culpa Lorem est pariatur consectetur fugiat ex cillum sunt. Reprehenderit commodo quis sunt deserunt exercitation ullamco anim quis nulla laboris tempor incididunt deserunt. Duis exercitation voluptate in minim quis adipisicing adipisicing ut occaecat dolor aute veniam duis labore. Labore ea cupidatat et pariatur consequat exercitation ad Lorem nisi fugiat est. Ullamco occaecat cillum irure irure eiusmod occaecat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <footer class="pt-4 my-md-5 pt-md-5">
+        <div class="row">
+          <div class="col-12 col-md">
+            <i class="fa-solid fa-mitten nav-icon"></i>
+            <small class="d-block mb-3 text-muted">© 2021-2022</small>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Features</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Cool stuff</a></li>
+              <li><a class="text-muted" href="#">Random feature</a></li>
+              <li><a class="text-muted" href="#">Team feature</a></li>
+              <li><a class="text-muted" href="#">Stuff for developers</a></li>
+              <li><a class="text-muted" href="#">Another one</a></li>
+              <li><a class="text-muted" href="#">Last time</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Resource</a></li>
+              <li><a class="text-muted" href="#">Resource name</a></li>
+              <li><a class="text-muted" href="#">Another resource</a></li>
+              <li><a class="text-muted" href="#">Final resource</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Team</a></li>
+              <li><a class="text-muted" href="#">Locations</a></li>
+              <li><a class="text-muted" href="#">Privacy</a></li>
+              <li><a class="text-muted" href="#">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+
+  
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
