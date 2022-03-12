@@ -14,10 +14,6 @@ function showPosition(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
   $.getJSON('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&units=metric&appid=b533307f7499889502d396e6615a0332', function(data) {
-    // let jsonResponse = document.getElementById('jsonResponse');
-    // jsonResponse.innerText = JSON.stringify(data['weather'][0]) + '\n';
-    // jsonResponse.innerText += JSON.stringify(data['main']);
-
     let weather_data = data['weather'][0];
     let temp_data = data['main'];
 
@@ -30,7 +26,6 @@ function showPosition(position) {
     $("#humidityTemp").html(temp_data['humidity'] + "%");
     $("#pressureTemp").html(temp_data['pressure'] + "  hPa");
     $("#windSpeed").html(data['wind']['speed'] + " m/s");
-    console.log(data)
   })
 }
 

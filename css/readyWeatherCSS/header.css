@@ -18,7 +18,7 @@ header {
   width: 100%;
   background-position: 0 -375px;
   background-size: auto;
-  background-image: url('assets/images/weatherPage/clouds-img-4.jpg');
+  background-image: url('../../assets/images/weatherPage/clouds-img-4.jpg');
 }
 header > div {
   width: inherit; 
