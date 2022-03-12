@@ -21,6 +21,7 @@ function showPosition(position) {
     let weather_data = data['weather'][0];
     let temp_data = data['main'];
 
+    $("#weatherLocation").html(data['name']);
     $("#mainTemp").html(Math.round(temp_data['temp']) + '°C');
     $("#minTemp").html("Min: " + Math.round(temp_data['temp_min']) + '°C');
     $("#maxTemp").html("Max: " + Math.round(temp_data['temp_max']) + '°C');
