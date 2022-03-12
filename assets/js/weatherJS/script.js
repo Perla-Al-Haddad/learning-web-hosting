@@ -27,6 +27,9 @@ function showPosition(position) {
     $("#maxTemp").html("Max: " + Math.round(temp_data['temp_max']) + '°C');
     $("#weatherIcon").addClass(convertIconCode(weather_data['icon']));
     $("#weatherDesc").html(weather_data['description']);
+    $("#humidityTemp").html(temp_data['humidity'] + "%");
+    $("#pressureTemp").html(temp_data['pressure'] + "  hPa");
+    $("#windSpeed").html(data['wind']['speed'] + " m/s");
     console.log(data)
   })
 }

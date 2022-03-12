@@ -19,7 +19,7 @@
     }
 
     .dark-purple-background   { background-color: #1a1624; }
-    .blue-background          { background-color: #3fb1e3; }
+    .blue-background          { background-color: #4a95cc; }
     .cyan-background          { background-color: #6be6c1; }
     .purple-background        { background-color: #626c91; }
     .light-purple-background  { background-color: #a0a7e6; }
@@ -57,6 +57,10 @@
       background: linear-gradient(0deg, #1a162455 10%, rgba(255,255,255, 0) 50%);
     }
 
+    header h1.page-title {
+      font-size: 4rem;
+    }
+
     .page-title {
       font-weight: 500;
     }
@@ -88,6 +92,22 @@
       box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
     }
 
+    .learn-more-link {
+      color: #4a95cc;
+      font-weight: 500;
+      font-size: 1.2rem;
+      transition: color 0.2s;
+    }
+    .learn-more-link:hover {
+      color: #34719d;
+    }
+    .learn-more-link:hover i {
+      transition: transform 0.2s;
+    }
+    .learn-more-link:hover i {
+      transform: translateX(5px);
+    }
+
   </style>
 
 </head>
@@ -112,10 +132,10 @@
         <div>
           <ul class="nav col-12 justify-content-end py-2">
             <li><a href="weather.html" class="nav-link px-3 py-0 "><i class="fa-solid fa-sun"></i> Home</a></li>
-            <li><a href="#" class="nav-link px-3 py-0 "><i class="fa-solid fa-temperature-three-quarters"></i> Today's Weather</a></li>
+            <li><a href="#Today" class="nav-link px-3 py-0 "><i class="fa-solid fa-temperature-three-quarters"></i> Today's Weather</a></li>
             <li><a href="#" class="nav-link px-3 py-0 "><i class="fa-solid fa-umbrella"></i> Forcasted Weather</a></li>
             <li><a href="#" class="nav-link px-3 py-0 "><i class="fa-solid fa-smog"></i> Historical Data</a></li>
-            <li><a href="#" class="nav-link px-3 py-0 ">About</a></li>
+            <li><a href="#About" class="nav-link px-3 py-0 ">About</a></li>
           </ul>
         </div>
       </div>
@@ -123,16 +143,53 @@
   </nav>
 
   <section>
-    <div class="container-fluid">
+    <div id="Today" class="container-fluid">
+      <div class="container py-5">
+        <h1>Weather for <span id="weatherLocation"></span></h1>
+        <!-- <pre id="jsonResponse" style="width: 100%;"></pre> -->
+        <div class="row mt-3">
+          <div class="col-md-6 mb-3">
+            <div>
+              <div class="d-flex align-items-end gap-4">
+                <i id="weatherIcon" class="fa-6x"></i>
+                <p id="weatherDesc" class="lead display-6 m-0"></p>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex gap-5" style="align-items: baseline;">
+                <p id="mainTemp" class="display-1"></p>
+                <div class="gap-4 d-flex">
+                  <p id="minTemp" class="lead"></p>
+                  <p id="maxTemp" class="lead"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 justify-content-center d-flex" style="flex-direction: column;">
+            <h3>Details</h3>
+            <p class="lead">Humidity: <span id="humidityTemp"></span></p>
+            <p class="lead">Pressure: <span id="pressureTemp"></span></p>
+            <p class="lead">Wind Speed: <span id="windSpeed"></span></p>
+          </div>
+        </div>
+        <div class="text-end">
+          <a class="nav-link learn-more-link" href="#">Learn more 
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+    </div>
 
-      <div class="container mt-5">
+    <div class="container-fluid light-blue-background">
+      
+      <div class="container py-5">
         <h1>Welcome to Ready Weather!</h1>
         <h5 class="text-secondary">Where you can find weather data on the go.</h5>
 
-        <div class="row pb-5 pt-4">
-          <a href="" class="col-lg-3 p-2">
+        <div class="row pt-4">
+          <a href="#Today" class="col-lg-3 p-2">
             <div class="card h-100 p-0 border-0 bg-dark text-white">
-              <img class="card-img" src="assets/images/weatherPage/clouds-img-3.jpg" alt="Card image">
+              <img class="card-img" style="object-fit: cover; height: 100%;" src="assets/images/weatherPage/clouds-img-2.jpg" alt="Card image">
               <div class="card-img-overlay align-items-center justify-content-center d-flex">
                 <h4 class="card-title text-center">Today's Weather</h4>
               </div>
@@ -140,7 +197,7 @@
           </a>
           <a href="" class="col-lg-3 p-2">
             <div class="card h-100 p-0 border-0 bg-dark text-white">
-              <img class="card-img" style="object-fit: cover; height: 100%;" src="assets/images/weatherPage/clouds-img-4.jpg" alt="Card image">
+              <img class="card-img" style="object-fit: cover; height: 100%;" src="assets/images/weatherPage/clouds-img-1.jpg" alt="Card image">
               <div class="card-img-overlay align-items-center justify-content-center d-flex">
                 <h4 class="card-title">Forcasted Weather</h4>
               </div>
@@ -148,13 +205,13 @@
           </a>
           <a href="" class="col-lg-3 p-2">
             <div class="card h-100 p-0 border-0 bg-dark text-white">
-              <img class="card-img" style="object-fit: cover; height: 100%;" src="assets/images/weatherPage/clouds-img-5.jpg" alt="Card image">
+              <img class="card-img" style="object-fit: cover; height: 100%;" src="assets/images/weatherPage/clouds-img-4.jpg" alt="Card image">
               <div class="card-img-overlay align-items-center justify-content-center d-flex">
                 <h4 class="card-title">Historical Data</h4>
               </div>
             </div>
           </a>
-          <a href="" class="col-lg-3 p-2">
+          <a href="#About" class="col-lg-3 p-2">
             <div class="card h-100 p-0 border-0 bg-dark text-white">
               <img class="card-img" style="object-fit: cover; height: 100%;" src="assets/images/weatherPage/clouds-img-6.jpg" alt="Card image">
               <div class="card-img-overlay align-items-center justify-content-center d-flex">
@@ -163,42 +220,15 @@
             </div>
           </a>
         </div>
-
-        <h2>Weather for <span id="weatherLocation"></span></h2>
-        <!-- <pre id="jsonResponse" style="width: 100%;"></pre> -->
-        <div class="row d-flex" style="align-items: baseline;">
-          <div class="col-md-6">
-            <div class="d-flex" style="align-items: baseline; column-gap: 12px;">
-              <i id="weatherIcon" class="fa-6x"></i>
-              <p id="weatherDesc" class="lead display-6" style="position: relative; bottom: 0;"></p>
-            </div>
-          </div>
-          <div class="col-md-6" style="position: relative; bottom: 0;">
-            <div class="d-flex gap-5" style="align-items: baseline;">
-              <div class="col-md-3">
-                <p id="mainTemp" class="display-1"></p>
-              </div>
-              <div class="col-md-6 gap-4 d-flex">
-                <p id="minTemp" class="lead"></p>
-                <p id="maxTemp" class="lead"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
-      
     </div>
-    <div class="container-fluid light-blue-background py-5 mt-3">
 
+    <div id="About" class="container-fluid py-5 mt-3">
       <div class="container">
         <h1>About us</h1>
         <p class="lead">Fugiat eiusmod elit cupidatat deserunt proident voluptate magna mollit occaecat magna. Cupidatat fugiat aute nulla ut quis velit nostrud qui nisi Lorem pariatur.</p> 
         <p class="lead">Est officia irure est aliqua mollit irure id velit culpa. Ea quis officia laborum amet irure occaecat. Velit duis aliquip exercitation quis elit reprehenderit occaecat. Labore do cupidatat id dolor irure est nulla enim.</p>
-        
-
       </div>
-
     </div>
   </section>
 
