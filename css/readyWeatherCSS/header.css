@@ -20,7 +20,7 @@ header {
   background-size: auto;
   background-image: url('../../assets/images/weatherPage/clouds-img-4.jpg');
 }
-header > div {
+header div.title-container {
   width: inherit; 
   height: inherit; 
   display: flex; 

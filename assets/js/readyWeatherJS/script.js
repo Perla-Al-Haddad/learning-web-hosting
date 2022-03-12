@@ -18,10 +18,10 @@ function showPosition(position) {
     let temp_data = data['main'];
 
     $("#weatherLocation").html(data['name']);
-    $("#mainTemp").html(Math.round(temp_data['temp']) + '°C');
+    $(".mainTemp").html(Math.round(temp_data['temp']) + '°C');
     $("#minTemp").html("Min: " + Math.round(temp_data['temp_min']) + '°C');
     $("#maxTemp").html("Max: " + Math.round(temp_data['temp_max']) + '°C');
-    $("#weatherIcon").addClass(convertIconCode(weather_data['icon']));
+    $(".weatherIcon").addClass(convertIconCode(weather_data['icon']));
     $("#weatherDesc").html(weather_data['description']);
     $("#humidityTemp").html(temp_data['humidity'] + "%");
     $("#pressureTemp").html(temp_data['pressure'] + "  hPa");
