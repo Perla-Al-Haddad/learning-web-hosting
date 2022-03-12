@@ -164,12 +164,45 @@
           </a>
         </div>
 
+        <h2>Weather for your Location</h2>
+        <!-- <pre id="jsonResponse" style="width: 100%;"></pre> -->
+        <div class="row d-flex" style="align-items: baseline;">
+          <div class="col-md-6">
+            <div class="d-flex" style="align-items: baseline; column-gap: 12px;">
+              <i id="weatherIcon" class="fa-6x"></i>
+              <p id="weatherDesc" class="lead display-6" style="position: relative; bottom: 0;"></p>
+            </div>
+          </div>
+          <div class="col-md-6" style="position: relative; bottom: 0;">
+            <div class="d-flex gap-5" style="align-items: baseline;">
+              <div class="col-md-3">
+                <p id="mainTemp" class="display-1"></p>
+              </div>
+              <div class="col-md-6 gap-4 d-flex">
+                <p id="minTemp" class="lead"></p>
+                <p id="maxTemp" class="lead"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
       
     </div>
+    <div class="container-fluid light-blue-background py-5 mt-3">
+
+      <div class="container">
+        <h1>About us</h1>
+        <p class="lead">Fugiat eiusmod elit cupidatat deserunt proident voluptate magna mollit occaecat magna. Cupidatat fugiat aute nulla ut quis velit nostrud qui nisi Lorem pariatur.</p> 
+        <p class="lead">Est officia irure est aliqua mollit irure id velit culpa. Ea quis officia laborum amet irure occaecat. Velit duis aliquip exercitation quis elit reprehenderit occaecat. Labore do cupidatat id dolor irure est nulla enim.</p>
+        
+
+      </div>
+
+    </div>
   </section>
 
-  <footer class="container-fluid blue-background py-5 mt-5">
+  <footer class="container-fluid blue-background py-5">
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-5">
@@ -213,69 +246,6 @@
   </footer>
 
   <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript">
-    // Initialize the echarts instance based on the prepared dom
-    var myChart = echarts.init(document.getElementById('main'), 'walden');
-
-    // Specify the configuration items and data for the chart
-    var option = {
-      title: {
-        text: 'ECharts Getting Started Example'
-      },
-      tooltip: {},
-      legend: {
-        data: ['sales']
-      },
-      xAxis: {
-        data: ['Shirts', 'Cardigans', 'Chiffons', 'Pants', 'Heels', 'Socks']
-      },
-      yAxis: {},
-      series: [
-        {
-          name: 'sales',
-          type: 'bar',
-          data: [5, 20, 36, 10, 10, 20]
-        }
-      ]
-    };
-
-    // Display the chart using the configuration items and data just specified.
-    myChart.setOption(option);
-  </script>
-  <script>
-
-    $.getJSON('https://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=b533307f7499889502d396e6615a0332', function(data) {
-      console.log(data);
-    })
-
-    function getCoords(elem) {
-      var box = elem.getBoundingClientRect();
-
-      var body = document.body;
-      var docEl = document.documentElement;
-
-      var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
-      var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
-
-      var clientTop = docEl.clientTop || body.clientTop || 0;
-      var clientLeft = docEl.clientLeft || body.clientLeft || 0;
-
-      var top  = box.top +  scrollTop - clientTop;
-      var left = box.left + scrollLeft - clientLeft;
-
-      return { top: Math.round(top), left: Math.round(left) };
-    }
-
-    window.onscroll = function (e) {
-      let navigationCoords = getCoords(document.getElementById("mainNavigation"));
-      let headerDOM = document.getElementsByTagName("header");
-      if (headerDOM[0].offsetHeight < navigationCoords.top) {
-        $("#navigationPageIcon").removeClass("opacity-0");
-      } else {
-        $("#navigationPageIcon").addClass("opacity-0");
-      }
-    } 
-
-  </script>
+  <script src="assets/js/weatherJS/script.js"></script>
 </body>
 </html>
