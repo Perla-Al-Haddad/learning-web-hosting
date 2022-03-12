@@ -1,19 +1,23 @@
+const url_base = "https://api.openweathermap.org/data/2.5/";
+const API_key = "b533307f7499889502d396e6615a0332";
+
 $('document').ready(function(){
   getLocation();
 });
 
 function getLocation() {
-  if (navigator.geolocation) {
+  if (navigator.geolocation) 
     navigator.geolocation.getCurrentPosition(showPosition, showError);
-  } else {
+  else 
     console.log("The Browser Does not Support Geolocation");
-  }
 }
 
 function showPosition(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
-  $.getJSON('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&units=metric&appid=b533307f7499889502d396e6615a0332', function(data) {
+
+  $.getJSON(url_base + 'weather?lat=' + lat + '&lon=' + long + '&units=metric&appid=' + API_key, function(data) {
+    console.log(url_base + 'onecall?lat=' + lat + '&lon=' + long + '&units=metric&appid=' + API_key);
     let weather_data = data['weather'][0];
     let temp_data = data['main'];
 
