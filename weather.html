@@ -4,11 +4,278 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather</title>
+  <title>Ready Weather - Home Page</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/fontawesome-free-6.0.0-web/css/all.css">
+
+  <script src="assets/dist/js/echarts.js"></script>
+  <script src="assets/js/weatherJS/echartsTheme.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .dark-purple-background   { background-color: #1a1624; }
+    .blue-background          { background-color: #3fb1e3; }
+    .cyan-background          { background-color: #6be6c1; }
+    .purple-background        { background-color: #626c91; }
+    .light-purple-background  { background-color: #a0a7e6; }
+    .light-blue-background    { background-color: #dfdff0b9; }
+    .test                     { background-color: #96dee8; }
+
+    nav a, .nav li a {
+      font-size: 1.2rem;
+      color: white;
+      transition: color 0.2s;  
+      font-weight: 500;
+    }
+    .nav li a:hover {
+      color: rgba(255, 255, 255, 0.467);
+    }
+
+    .nav-icon {
+      padding-right: 15px;
+      padding-left: 5px;
+    }
+
+    header {
+      height: 65vh;
+      width: 100%;
+      background-position: 0 -375px;
+      background-size: auto;
+      background-image: url('assets/images/weatherPage/clouds-img-4.jpg');
+    }
+    header > div {
+      width: inherit; 
+      height: inherit; 
+      display: flex; 
+      align-items: flex-end;
+      /* background: #1a162499; */
+      background: linear-gradient(0deg, #1a162455 10%, rgba(255,255,255, 0) 50%);
+    }
+
+    .page-title {
+      font-weight: 500;
+    }
+
+    #navigationPageIcon {
+      transition: opacity 0.2s;
+    }
+
+    footer ul a.nav-link {
+      font-size: 1.2rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    footer ul a.nav-link:hover {
+      color: rgba(238, 238, 238, 0.734) !important;
+    }
+
+    .card-img-overlay {
+      background-color: #1a16242c;
+    }
+    .card-title {
+      text-shadow: #1a1624 0 0 15px;
+    }
+    .card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover{
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    }
+
+  </style>
+
 </head>
 <body>
   
-  <h1>Weather</h1>
+  <header>
+    <div>
+      <div class="container">
+        <h1 class="text-white display-1 pb-3 page-title">Ready Weather <i class="fa-solid fa-snowflake"></i></h1>
+      </div>
+    </div>
+  </header>
+  <nav id="mainNavigation" class="navbar navbar-expand-md navbar-dark py-3 dark-purple-background sticky-top" aria-label="Fourth navbar example">
+    <div class="container">
+      <a href="/" id="navigationPageIcon" class="opacity-0 d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none ">
+        <span class="text-white">Ready Weather <i class="fa-solid fa-snowflake"></i></span>
+      </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContainer" aria-controls="navbarContainer" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarContainer">
+        <div>
+          <ul class="nav col-12 justify-content-end py-2">
+            <li><a href="weather.html" class="nav-link px-3 py-0 "><i class="fa-solid fa-sun"></i> Home</a></li>
+            <li><a href="#" class="nav-link px-3 py-0 "><i class="fa-solid fa-temperature-three-quarters"></i> Today's Weather</a></li>
+            <li><a href="#" class="nav-link px-3 py-0 "><i class="fa-solid fa-umbrella"></i> Forcasted Weather</a></li>
+            <li><a href="#" class="nav-link px-3 py-0 "><i class="fa-solid fa-smog"></i> Historical Data</a></li>
+            <li><a href="#" class="nav-link px-3 py-0 ">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
 
+  <section>
+    <div class="container-fluid">
+
+      <div class="container mt-5">
+        <h1>Welcome to Ready Weather!</h1>
+        <h5 class="text-secondary">Where you can find weather data on the go.</h5>
+
+        <div class="row pb-5 pt-4">
+          <a href="" class="col-lg-3 p-2">
+            <div class="card h-100 p-0 border-0 bg-dark text-white">
+              <img class="card-img" src="assets/images/weatherPage/clouds-img-3.jpg" alt="Card image">
+              <div class="card-img-overlay align-items-center justify-content-center d-flex">
+                <h4 class="card-title text-center">Today's Weather</h4>
+              </div>
+            </div>
+          </a>
+          <a href="" class="col-lg-3 p-2">
+            <div class="card h-100 p-0 border-0 bg-dark text-white">
+              <img class="card-img" style="object-fit: cover; height: 100%;" src="assets/images/weatherPage/clouds-img-4.jpg" alt="Card image">
+              <div class="card-img-overlay align-items-center justify-content-center d-flex">
+                <h4 class="card-title">Forcasted Weather</h4>
+              </div>
+            </div>
+          </a>
+          <a href="" class="col-lg-3 p-2">
+            <div class="card h-100 p-0 border-0 bg-dark text-white">
+              <img class="card-img" style="object-fit: cover; height: 100%;" src="assets/images/weatherPage/clouds-img-5.jpg" alt="Card image">
+              <div class="card-img-overlay align-items-center justify-content-center d-flex">
+                <h4 class="card-title">Historical Data</h4>
+              </div>
+            </div>
+          </a>
+          <a href="" class="col-lg-3 p-2">
+            <div class="card h-100 p-0 border-0 bg-dark text-white">
+              <img class="card-img" style="object-fit: cover; height: 100%;" src="assets/images/weatherPage/clouds-img-6.jpg" alt="Card image">
+              <div class="card-img-overlay align-items-center justify-content-center d-flex">
+                <h4 class="card-title">About</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+      
+    </div>
+  </section>
+
+  <footer class="container-fluid blue-background py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-5">
+          <a href="weather.html" class="nav-link display-6 p-0 text-white page-title">
+            Ready Weather 
+            <i class="fa-solid fa-snowflake"></i>
+          </a>
+          <small class="d-block mb-3 text-white">© 2021-2022</small>
+        </div>
+        <div class="col-6 col-md text-white">
+          <h3>Features</h3>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-white nav-link p-0" href="#">Cool stuff</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Random feature</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Team feature</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Stuff for developers</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Another one</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Last time</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md text-white">
+          <h3>Resources</h3>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-white nav-link p-0" href="#">Resource</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Resource name</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Another resource</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md text-white">
+          <h3>About</h3>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-white nav-link p-0" href="#">Team</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Locations</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Privacy</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+    // Initialize the echarts instance based on the prepared dom
+    var myChart = echarts.init(document.getElementById('main'), 'walden');
+
+    // Specify the configuration items and data for the chart
+    var option = {
+      title: {
+        text: 'ECharts Getting Started Example'
+      },
+      tooltip: {},
+      legend: {
+        data: ['sales']
+      },
+      xAxis: {
+        data: ['Shirts', 'Cardigans', 'Chiffons', 'Pants', 'Heels', 'Socks']
+      },
+      yAxis: {},
+      series: [
+        {
+          name: 'sales',
+          type: 'bar',
+          data: [5, 20, 36, 10, 10, 20]
+        }
+      ]
+    };
+
+    // Display the chart using the configuration items and data just specified.
+    myChart.setOption(option);
+  </script>
+  <script>
+
+    $.getJSON('https://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=b533307f7499889502d396e6615a0332', function(data) {
+      console.log(data);
+    })
+
+    function getCoords(elem) {
+      var box = elem.getBoundingClientRect();
+
+      var body = document.body;
+      var docEl = document.documentElement;
+
+      var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+      var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+
+      var clientTop = docEl.clientTop || body.clientTop || 0;
+      var clientLeft = docEl.clientLeft || body.clientLeft || 0;
+
+      var top  = box.top +  scrollTop - clientTop;
+      var left = box.left + scrollLeft - clientLeft;
+
+      return { top: Math.round(top), left: Math.round(left) };
+    }
+
+    window.onscroll = function (e) {
+      let navigationCoords = getCoords(document.getElementById("mainNavigation"));
+      let headerDOM = document.getElementsByTagName("header");
+      if (headerDOM[0].offsetHeight < navigationCoords.top) {
+        $("#navigationPageIcon").removeClass("opacity-0");
+      } else {
+        $("#navigationPageIcon").addClass("opacity-0");
+      }
+    } 
+
+  </script>
 </body>
 </html>

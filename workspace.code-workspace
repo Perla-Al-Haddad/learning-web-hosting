@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "learning-web-hosting",
+			"path": "."
+		}
+	],
+	"settings": {
+		"prettier.embeddedLanguageFormatting": "off",
+		"prettier.enable": false
+	}
+}
