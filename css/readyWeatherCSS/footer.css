@@ -1,0 +1,8 @@
+footer ul a.nav-link {
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+footer ul a.nav-link:hover {
+  color: rgba(238, 238, 238, 0.734) !important;
+}

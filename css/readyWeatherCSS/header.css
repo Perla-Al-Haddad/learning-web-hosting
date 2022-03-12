@@ -1,0 +1,38 @@
+nav a, .nav li a {
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.2s;  
+  font-weight: 500;
+}
+.nav li a:hover {
+  color: rgba(255, 255, 255, 0.467);
+}
+
+.nav-icon {
+  padding-right: 15px;
+  padding-left: 5px;
+}
+
+header {
+  height: 65vh;
+  width: 100%;
+  background-position: 0 -375px;
+  background-size: auto;
+  background-image: url('assets/images/weatherPage/clouds-img-4.jpg');
+}
+header > div {
+  width: inherit; 
+  height: inherit; 
+  display: flex; 
+  align-items: flex-end;
+  /* background: #1a162499; */
+  background: linear-gradient(0deg, #1a162455 10%, rgba(255,255,255, 0) 50%);
+}
+
+header h1.page-title {
+  font-size: 4rem;
+}
+
+#navigationPageIcon {
+  transition: opacity 0.2s;
+}
