@@ -25,10 +25,3 @@ body {
 .learn-more-link:hover i {
   transform: translateX(5px);
 }
-
-.nav ul li a.nav-link {
-  white-space: nowrap;
-}
-.nav {
-  flex-wrap: nowrap;
-}
