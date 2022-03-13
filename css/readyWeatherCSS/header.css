@@ -36,3 +36,10 @@ header h1.page-title {
 #navigationPageIcon {
   transition: opacity 0.2s;
 }
+
+.nav ul li a.nav-link {
+  white-space: nowrap;
+}
+.nav {
+  flex-wrap: nowrap;
+}

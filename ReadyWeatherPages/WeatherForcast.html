@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ready Weather - Weather Forcast</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/fontawesome-free-6.0.0-web/css/all.css">
+  <link rel="stylesheet" href="../css/readyWeatherCSS/style.css">
+  <link rel="stylesheet" href="../css/readyWeatherCSS/header.css">
+  <link rel="stylesheet" href="../css/readyWeatherCSS/footer.css">
+
+  <script src="../assets/dist/js/echarts.js"></script>
+  <script src="../assets/js/readyWeatherJS/echartsTheme.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+  <header>
+    <div class="text-white container d-flex gap-4 justify-content-end p-5 pt-4" style="position: absolute; right: 0; text-shadow: #1a162499 0 0 10px;">
+      <p class="mainTemp display-1"></p>
+    </div>
+    <div class="title-container">
+      <div class="container">
+        <h1 class="text-white display-1 pb-3 page-title">Ready Weather <i class="weatherIcon"></i></h1>
+      </div>
+    </div>
+  </header>
+  <nav id="mainNavigation" class="navbar navbar-expand-md navbar-dark py-3 dark-purple-background sticky-top" aria-label="Fourth navbar example">
+    <div class="container">
+      <a href="/" id="navigationPageIcon" class="opacity-0 d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none ">
+        <span class="text-white">Ready Weather <i class="weatherIcon"></i></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContainer" aria-controls="navbarContainer" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarContainer">
+        <div>
+          <ul class="nav col-12 justify-content-end py-2">
+            <li><a href="../Ready Weather.html" class="nav-link px-3 py-0 "><i class="fa-solid fa-sun"></i> Home</a></li>
+            <li><a href="../Ready Weather.html#Today" class="nav-link px-3 py-0 "><i class="fa-solid fa-temperature-three-quarters"></i> Today's Weather</a></li>
+            <li><a href="WeatherForcast.html" class="nav-link px-3 py-0 "><i class="fa-solid fa-umbrella"></i> Weather Forecast</a></li>
+            <li><a href="#" class="nav-link px-3 py-0 "><i class="fa-solid fa-smog"></i> Historical Data</a></li>
+            <li><a href="#About" class="nav-link px-3 py-0 ">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section>
+    
+    <div class="py-5 container-fluid">
+
+      <div class="container">
+        <h1>Weather Forecast for *</h1>
+        <div id="responseList"></div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer class="container-fluid blue-background py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-5">
+          <a href="../Ready Weather.html" class="nav-link display-6 p-0 text-white page-title">
+            Ready Weather 
+            <i class="weatherIcon"></i>
+          </a>
+          <small class="d-block mb-3 text-white">© 2021-2022</small>
+        </div>
+        <div class="col-6 col-md text-white">
+          <h3>Features</h3>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-white nav-link p-0" href="#">Cool stuff</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Random feature</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Team feature</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Stuff for developers</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Another one</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Last time</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md text-white">
+          <h3>Resources</h3>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-white nav-link p-0" href="#">Resource</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Resource name</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Another resource</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md text-white">
+          <h3>About</h3>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-white nav-link p-0" href="#">Team</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Locations</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Privacy</a></li>
+            <li><a class="text-white nav-link p-0" href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.js"></script>
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/readyWeatherJS/constants.js"></script>
+  <script src="../assets/js/readyWeatherJS/utils.js"></script>
+  <script src="../assets/js/readyWeatherJS/header.js"></script>
+  <script src="../assets/js/readyWeatherJS/Pages/WeatherForecat.js"></script>
+</body>
+</html>
